@@ -1,0 +1,9 @@
+Bundle-Name: oracly-api
+Bundle-SymbolicName: com.liferay.oracly.accounts.payable.data.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.liferay.oracly.accounts.payable.data.exception,\
+	com.liferay.oracly.accounts.payable.data.model,\
+	com.liferay.oracly.accounts.payable.data.service,\
+	com.liferay.oracly.accounts.payable.data.service.persistence
+-includeresource: META-INF/service.xml=../oracly-service/service.xml

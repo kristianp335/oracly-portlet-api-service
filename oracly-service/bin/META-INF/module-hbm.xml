@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false" default-lazy="false">
+	<import class="com.liferay.oracly.accounts.payable.data.model.Payable" />
+	<class name="com.liferay.oracly.accounts.payable.data.model.impl.PayableImpl" table="Oracly_Payable">
+		<id name="payableId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property column="uuid_" name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="dueDate" type="org.hibernate.type.TimestampType" />
+		<property name="amount" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property column="path_" name="path" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="documentId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="flag" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="supplierName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+</hibernate-mapping>

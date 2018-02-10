@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.0.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_0_0.dtd">
+
+<service-builder package-path="com.liferay.oracly.accounts.payable.data">
+	<namespace>Oracly</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+	<entity local-service="true" name="Payable" remote-service="true" uuid="true">
+
+		<!-- PK fields -->
+
+		<column name="payableId" primary="true" type="long" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="dueDate" type="Date" />
+		<column name="amount" type="Double" />
+		<column name="description" type="String" />
+		<column name="path" type="String" />
+		<column name="documentId" type="long" />
+		<column name="flag" type="int" />
+		<column name="supplierName" type="String" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="dueDate" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="FindByAmount" return-type="Collection">
+			<finder-column name="amount" />
+		</finder>
+
+		<!-- References -->
+
+		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset" />
+		<reference entity="AssetTag" package-path="com.liferay.portlet.asset" />
+	</entity>
+</service-builder>

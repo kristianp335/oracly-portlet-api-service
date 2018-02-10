@@ -1,0 +1,3 @@
+Bundle-Name: oracly-web
+Bundle-SymbolicName: com.liferay.oracly.accounts.payable.web
+Bundle-Version: 1.0.0
